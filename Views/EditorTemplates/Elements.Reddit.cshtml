@@ -1,0 +1,13 @@
+﻿@model Ouwinga.Tutorials.ViewModels.RedditEditorViewModel
+<fieldset>
+    <div>
+        @Html.LabelFor(m => m.Subreddit, T("Subreddit"))
+        @Html.TextBoxFor(m => m.Subreddit, new { @class = "text medium" })
+        <span class="hint">@T("The subreddit to get posts from. Leave blank to use the frontpage of Reddit.")</span>
+    </div>
+    <div>
+        @Html.LabelFor(m => m.CacheMinutes, T("Cache Minutes"))
+        @Html.TextBoxFor(m => m.CacheMinutes, new { @class = "text", @type = "number" })
+        <span class="hint">@T("The amount of time in minutes to cache the Reddit Posts. Leave blank or set to zero to disable caching.")</span>
+    </div>
+</fieldset>

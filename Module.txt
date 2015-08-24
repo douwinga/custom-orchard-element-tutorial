@@ -1,0 +1,12 @@
+﻿Name: Reddit Element
+Category: Layout
+AntiForgery: enabled
+Author: David Ouwinga
+Website: http://www.davidouwinga.com
+Version: 1.0
+OrchardVersion: 1.0
+Description: This module adds a Reddit recent post element to layouts
+Features:
+    Ouwinga.Tutorials:
+        Description: Adds a Reddit element to layouts
+        Dependencies: Orchard.Layouts

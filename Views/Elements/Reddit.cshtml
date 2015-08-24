@@ -1,0 +1,27 @@
+﻿@using Ouwinga.Tutorials.Elements
+@using Ouwinga.Tutorials.Models
+@{
+    var element = (Reddit)Model.Element;
+    var subreddit = string.IsNullOrWhiteSpace(element.Subreddit) ? "Frontpage" : "/r/" + element.Subreddit.ToLower();
+    var title = "Reddit Posts from " + subreddit;
+
+    var posts = (List<RedditPost>) Model.Posts;
+}
+
+<section>
+    <h1>@title</h1>
+    @foreach (var post in posts) {
+        <article class="row">
+            @if (!string.IsNullOrEmpty(post.ThumbnailUrl) && post.ThumbnailUrl != "self" && post.ThumbnailUrl != "default") {
+                <div class="span-2 cell">
+                    <a href="@post.LinkUrl" target="_blank">
+                        <img src="@post.ThumbnailUrl" alt="Thumbnail"/>
+                    </a>
+                </div>
+            }
+            <header class="span-10 cell">
+                <h2><a href="@post.LinkUrl" target="_blank">@post.Title</a></h2>
+            </header>
+        </article>
+    }
+</section>
